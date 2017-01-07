@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>git talk</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<!--
+		<link rel="stylesheet" href="css/theme/moon.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+		-->
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="/img/git.png">
+					<p><small>more at <a href="https://xkcd.com/license.html">xkcd.com</a></small></p>
+				</section>
+
+				<section>
+					<h1>Disclaimer</h1>
+					<p class="fragment">not a how-to</p>
+					<p class="fragment">glossary of git features</p>
+					<p class="fragment">details in the code</p>
+				</section>
+
+				<section>
+					<h2>Overview</h2>
+					<ul>
+						<li class="fragment">reflog</li>
+						<li class="fragment">
+							git rebase
+							<ul>
+								<li>rebase vs merge</li>
+								<li>mid-feature fix</li>
+								<li>distributed development</li>
+							</ul>
+						</li>
+						<li class="fragment">non fast-forward pushes</li>
+						<li class="fragment">feature inception</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Git</h2>
+					<img src="/img/sourcetree_graph.png">
+				</section>
+
+				<section>
+					<h2>Git</h2>
+					<img src="/img/spaghetti.jpg">
+				</section>
+
+				<section>
+					<h2>Git</h2>
+					<img src="/img/spaghetti_flags.jpg">
+				</section>
+
+				<section>
+					<h2>Reflog</h2>
+					<p>find back lost commits</p>
+
+					<h2>Temp branch</h2>
+					<p>mark commits for easy access</p>
+
+					<p class="fragment">(demo)</p>
+				</section>
+
+				<section>
+					<h2>Why rebase?</h2>
+					<p class="fragment">Three features</p>
+					<p class="fragment">(demo)</p>
+				</section>
+
+				<section>
+					<h2>Fix mid-feature</h2>
+					<p class="fragment">(demo)</p>
+				</section>
+
+				<section>
+					<h2>Distributed features</h2>
+					<p class="fragment">Alice, Bob, Charlie</p>
+					<p class="fragment">(demo)</p>
+				</section>
+
+				<section>
+					<h2>Non Fast-Forward pushes</h2>
+					<p class="fragment">git push --force</p>
+					<p class="fragment">enable in Beanstalk settings</p>
+					<p class="fragment">(demo)</p>
+				</section>
+
+				<section>
+					<h2>Feature inception</h2>
+					<p>features in features</p>
+					<p class="fragment">(demo)</p>
+				</section>
+
+				<section>
+					<h2>Summary</h2>
+					<p>
+						<ul>
+							<li class="fragment">
+								reflog
+								<ul>
+									<li>find back lost commits</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								temporary branches
+								<ul>
+									<li>like bookmarks in the history</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								rebase
+								<ul>
+									<li>cleaner</li>
+									<li>beware of git pull</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								non fast-forward pushes
+								<ul>
+									<li>use when needed</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								feature-in-feature
+								<ul>
+									<li>group big features even further</li>
+								</ul>
+							</li>
+						</ul>
+					</p>
+					<p class="fragment">Questions?</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+				//parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px"
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
